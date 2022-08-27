@@ -1,20 +1,26 @@
 import random
 import pygame
+from PIL import Image
 
 pygame.init
 
 #variables
-x = random.randint(0,9)
-#text = r'C:\Users\benbu\Documents\GitHub\clothingRandomizer\images\image'
+x = random.randint(2,5)
+text = r'C:\Users\benbu\Documents\GitHub\clothingRandomizer\images\image'
 
 #determining displayed image
-capturedImage = "text" + str(x) + ".jpg"
+capturedImage = text + str(x) + ".jpg"
 print(capturedImage)
 
+img = Image.open(capturedImage)
+
+# get width and height
+width = img.width
+height = img.height
 
 #setting up the window stuff
-displayWidth = 800
-displayHeight = 600
+displayWidth = width
+displayHeight = height
 surface = pygame.display.set_mode((displayWidth, displayHeight))
 pygame.display.set_caption("images")
 displayImage = pygame.image.load(capturedImage)
