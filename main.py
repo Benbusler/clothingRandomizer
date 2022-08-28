@@ -21,13 +21,15 @@ height = img.height
 #setting up the window stuff
 displayWidth = width
 displayHeight = height
-surface = pygame.display.set_mode((displayWidth, displayHeight))
+surface = pygame.display.set_mode((displayWidth, 2 * displayHeight))
 pygame.display.set_caption("images")
 displayImage = pygame.image.load(capturedImage)
 
 while True:
     surface.fill((255,255,255))
     surface.blit(displayImage, (0, 0))
+    surface.blit(displayImage, (0, height))
+
 
     for event in pygame.event.get():
         if event.type == pygame.QUIT:
