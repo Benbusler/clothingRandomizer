@@ -51,7 +51,7 @@ bodyWidth = displayBodyO.width
 pantWidth = displayPantO.width
 footWidth = displayFootO.width
 while True:
-    surface.fill((255,255,255))
+    surface.fill((0,0,0))
     surface.blit(displayHead, (displayWidth / 2 - headWidth / 2 , 0))
     surface.blit(displayBody, (displayWidth / 2 - bodyWidth / 2 , headHeight))
     surface.blit(displayPant, (displayWidth / 2 - pantWidth / 2 , bodyHeight))
