@@ -1,6 +1,10 @@
+from multiprocessing.connection import wait
 import random
 import pygame
-from PIL import Image
+from PIL import Image,ImageGrab 
+import time
+
+
 
 pygame.init
 
@@ -50,16 +54,33 @@ headWidth = displayHeadO.width
 bodyWidth = displayBodyO.width
 pantWidth = displayPantO.width
 footWidth = displayFootO.width
+
+
+
+surface.fill((0,0,0))
+surface.blit(displayHead, (displayWidth / 2 - headWidth / 2 , 0))
+surface.blit(displayBody, (displayWidth / 2 - bodyWidth / 2 , headHeight))
+surface.blit(displayPant, (displayWidth / 2 - pantWidth / 2 , bodyHeight))
+surface.blit(displayFoot, (displayWidth / 2 - footWidth / 2, pantHeight))
+pygame.display.update()
+
+
+pic = ImageGrab.grab(bbox=(1000,2000,1200,1500))
+pic.show()
+pic.save("ss.png")
+
+#pic = pyscreenshot.grab(bbox=(1000, 1400, 1200, 1500))
+#pic.show()
+#pic.save("ss.png")
+
+
 while True:
-    surface.fill((0,0,0))
-    surface.blit(displayHead, (displayWidth / 2 - headWidth / 2 , 0))
-    surface.blit(displayBody, (displayWidth / 2 - bodyWidth / 2 , headHeight))
-    surface.blit(displayPant, (displayWidth / 2 - pantWidth / 2 , bodyHeight))
-    surface.blit(displayFoot, (displayWidth / 2 - footWidth / 2, pantHeight))
-
-
     for event in pygame.event.get():
         if event.type == pygame.QUIT:
             pygame.quit()
             quit()
         pygame.display.update()
+
+
+
+
