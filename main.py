@@ -65,7 +65,7 @@ surface.blit(displayFoot, (displayWidth / 2 - footWidth / 2, pantHeight))
 pygame.display.update()
 
 
-pic = ImageGrab.grab(bbox=(1000,2000,1200,1500))
+pic = ImageGrab.grab(bbox=(1000,1500,1200,1500))
 pic.show()
 pic.save("ss.png")
 
